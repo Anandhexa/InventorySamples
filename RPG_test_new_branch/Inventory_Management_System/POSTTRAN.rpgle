@@ -16,14 +16,14 @@ D QTY           S              9  0
 /FREE
    *INLR = *OFF;
  
-   EXSR $INIT;
+   EXSR $INITPOST;
  
    DOU *IN03 = *ON;
  
       EXFMT POSTSCRN;
  
       IF *IN05 = *ON;
-         EXSR $POST;
+         EXSR $TPOST;
       ENDIF;
  
    ENDDO;
@@ -35,7 +35,7 @@ D QTY           S              9  0
 C*******************************************************
 C* $INIT Clear variables
 C*******************************************************
-C     $INIT         BEGSR
+C     $INITPOST         BEGSR
 C                   Z-ADD0        TRNID
 C                   MOVE *BLANK   TRNTYPE
 C                   Z-ADD0        ITEMID
@@ -46,7 +46,7 @@ C                   ENDSR
 C*******************************************************
 C* $POST  Perform Posting
 C*******************************************************
-C     $POST         BEGSR
+C     $TPOST         BEGSR
  
 C* Write Transaction Header
 C                   MOVELTRNTYPE   TRNTYPE
