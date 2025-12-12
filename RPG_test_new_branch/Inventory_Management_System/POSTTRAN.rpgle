@@ -16,7 +16,7 @@ D QTY           S              9  0
 /FREE
    *INLR = *OFF;
  
-   EXSR $INIT;
+   EXSR $INITPOST;
  
    DOU *IN03 = *ON;
  
@@ -35,7 +35,7 @@ D QTY           S              9  0
 C*******************************************************
 C* $INIT Clear variables
 C*******************************************************
-C     $INIT         BEGSR
+C     $INITPOST         BEGSR
 C                   Z-ADD0        TRNID
 C                   MOVE *BLANK   TRNTYPE
 C                   Z-ADD0        ITEMID
